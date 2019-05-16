@@ -2,7 +2,7 @@ const express = require("express");
 const router = require("./routers/api/users")
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5007;
 
  app.use(router)
  app.use(bodyParser.urlencoded({ extended: false }));
