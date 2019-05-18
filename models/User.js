@@ -4,28 +4,39 @@ var db = require('../db/db.js')  //引入数据库
  * 定义表的映射模型
  * https://sequelize.readthedocs.io/en/v3/docs/models-definition/
  * */
-module.exports = db.define('tb_user',
+module.exports = db.define('USER_INFO',
     {
-        id: {
-            type: Sequelize.INTEGER(11),
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        username: {
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        password: {
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        id_card: {
-            type: Sequelize.STRING(50),
-            allowNull: false
-        }
-    },
-    {
-        timestamps: false
-    }
-)
+        ID: {
+			type: Sequelize.INTEGER(11),
+			allowNull: false,
+			primaryKey: true,
+			autoIncrement: true
+		},
+		NICKNAME: {
+			type: Sequelize.STRING(255),
+			allowNull: false
+		},
+		AVATARURL: {
+			type: Sequelize.STRING(255),
+			allowNull: false
+		},
+		OPENID: {
+			type: Sequelize.STRING(255),
+			allowNull: false
+		},
+		GENDER: {
+			type: Sequelize.STRING(255),
+			allowNull: false
+		},
+		AUTH: {
+			type: Sequelize.INTEGER(255),
+			allowNull: false
+		},
+		COLLECTION: {
+			type: Sequelize.STRING(255),
+			allowNull: true
+		}
+	}, {
+		tableName: 'USER_INFO',
+		timestamps: false
+	});

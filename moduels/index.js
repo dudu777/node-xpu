@@ -5,11 +5,15 @@ let models = []
 files.forEach(item=>{
     if(item!='index.js') {  //除了这个index.js
         /**下面这段代码结果是将： tb_user.js  转换为name为 User  **/
+        console.log('item',item)
       let names = item.split('.')[0].split('_')  
+      console.log('name',name)
         let name = ''
         for(let i=1;i<names.length;i++) {
           name+=names[i].substring(0,1).toUpperCase() + names[i].substring(1)
+
         }
+        console.log('name2',name)
         models.push({name: name, path:"./"+item})
     } 
 })
