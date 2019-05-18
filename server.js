@@ -19,6 +19,7 @@ var formidable = require("formidable");
 var path = require("path")
 var fs = require("fs")
 app.use(express.static('./upload'))//这个很重要，必须要这个才能拿到图片链接，而不是进入路由，有兴趣的同学可以删掉试验一下
+
 app.post("/upload", (req, res) => {
     var form = new formidable.IncomingForm();//既处理表单，又处理文件上传
     //设置文件上传文件夹/路径，__dirname是一个常量，为当前路径
@@ -40,3 +41,7 @@ app.post("/upload", (req, res) => {
         })
     })
 })
+
+
+
+
