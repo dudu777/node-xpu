@@ -62,10 +62,10 @@ router.post('/auth',jsonParser,function(req,res,next){
 
 var ctrls = require('../../controllers')
 
-router.post('/user/login', ctrls.login);
+router.post('/user/login', jsonParser,ctrls.login);
 router.post('/stu', ctrls.stu);
 //当进入’user/userlist’这个路由是，先调用‘ctrls.Until.checkToken’判断
 //是否用户登录，如果已经登录，会在请求req里加上查询到数据，并放行。
 //next() //放行后执行后面的用户列表查询方法。
-router.get('/user/userlist', ctrls.Until.checkToken, ctrls.Users.userlist);
+router.post('/user/list',jsonParser,ctrls.Until.checkToken,ctrls.login);// ctrls.Until.checkToken
 module.exports = router;

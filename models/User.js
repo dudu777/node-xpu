@@ -24,5 +24,8 @@ module.exports = db.define('tb_user',
             type: Sequelize.STRING(50),
             allowNull: false
         }
+    },
+    {
+        timestamps: false
     }
 )
