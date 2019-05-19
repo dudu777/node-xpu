@@ -1,5 +1,11 @@
-var User = require('./User')
+var UserInfo = require('./UserInfo')
+var UserAuth = require('./UserAuth')
+var UserContact = require('./UserContact')
+var Goods = require('./goods')
 
 module.exports = {
-    User,
+    UserInfo,
+    UserAuth,
+    UserContact,
+    Goods
 }

@@ -1,35 +1,35 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('USER_CONTACT', {
-		ID: {
+	return sequelize.define('user_contact', {
+		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		OPENID: {
+		openID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		ADRESS: {
+		address: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		PHNUMBER: {
+		phNum: {
 			type: DataTypes.STRING(255),
-			allowNull: false
+			allowNull: true
 		},
-		WXNUMBER: {
+		wxNum: {
 			type: DataTypes.STRING(255),
-			allowNull: false
+			allowNull: true
 		},
-		QQNUMBER: {
+		qqNum: {
 			type: DataTypes.STRING(255),
-			allowNull: false
+			allowNull: true
 		}
 	}, {
-		tableName: 'USER_CONTACT',
+		tableName: 'user_contact',
 		timestamps: false
 	});
 };

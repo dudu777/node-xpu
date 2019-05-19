@@ -1,59 +1,76 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('GOODS', {
-		ID: {
+	return sequelize.define('goods', {
+		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		GOODID: {
+		goodID: {
 			type: DataTypes.STRING(255),
 			allowNull: true
 		},
-		OPENID: {
+		openId: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		GOODNAME: {
+		title: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		TYPE: {
+		description: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		type: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		PICTURE: {
+		img: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		TAG: {
+		tag: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		isNew: {
+			type: DataTypes.INTEGER(1),
+			allowNull: false
+		},
+		buyPrice: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		cellPrice: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		isBargin: {
+			type: DataTypes.INTEGER(1),
+			allowNull: false
+		},
+		publishTime: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		TRANSACTION: {
-			type: DataTypes.STRING(255),
-			allowNull: false
+		isFree: {
+			type: DataTypes.INTEGER(1),
+			allowNull: true
 		},
-		ISNEW: {
-			type: DataTypes.STRING(255),
-			allowNull: false
+		isWatch: {
+			type: DataTypes.INTEGER(1),
+			allowNull: true
 		},
-		CALLPRICE: {
-			type: DataTypes.STRING(255),
-			allowNull: false
-		},
-		MARKETPRICE: {
-			type: DataTypes.STRING(255),
-			allowNull: false
-		},
-		PUBLICTIME: {
-			type: DataTypes.STRING(255),
-			allowNull: false
+		status: {
+			type: DataTypes.INTEGER(11),
+			allowNull: true,
+			defaultValue: '1'
 		}
 	}, {
-		tableName: 'GOODS',
+		tableName: 'goods',
 		timestamps: false
 	});
 };

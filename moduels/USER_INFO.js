@@ -1,39 +1,40 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('USER_INFO', {
-		ID: {
+	return sequelize.define('user_info', {
+		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		NICKNAME: {
+		nickName: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		AVATARURL: {
+		avatarUrl: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		OPENID: {
+		openID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		GENDER: {
+		gender: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		AUTH: {
+		auth: {
 			type: DataTypes.INTEGER(255),
-			allowNull: false
+			allowNull: false,
+			defaultValue: '0'
 		},
-		COLLECTION: {
+		favor: {
 			type: DataTypes.STRING(255),
 			allowNull: true
 		}
 	}, {
-		tableName: 'USER_INFO',
+		tableName: 'user_info',
 		timestamps: false
 	});
 };

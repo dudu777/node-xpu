@@ -1,39 +1,39 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('USER_AUTH', {
-		ID: {
+	return sequelize.define('stu_auth', {
+		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		OPENID: {
+		openID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		USERNAME: {
+		name: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		STUDENTID: {
+		stuID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		ACADEMY: {
+		academy: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		CLASS: {
+		stuClass: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		DATE: {
+		date: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		}
 	}, {
-		tableName: 'USER_AUTH',
+		tableName: 'stu_auth',
 		timestamps: false
 	});
 };

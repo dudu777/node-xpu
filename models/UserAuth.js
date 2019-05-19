@@ -1,42 +1,43 @@
-var Sequelize = require('sequelize')  //引入sequelize模块
+/* jshint indent: 1 */
+var Sequelize = require('Sequelize')  //引入Sequelizee模块
 var db = require('../db/db.js')  //引入数据库
 /*
  * 定义表的映射模型
- * https://sequelize.readthedocs.io/en/v3/docs/models-definition/
+ * https://Sequelizee.readthedocs.io/en/v3/docs/models-definition/
  * */
-module.exports = db.define('USER_INFO',
+module.exports = db.define('stu_auth',
     {
-        ID: {
+		id: {
 			type: Sequelize.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		NICKNAME: {
+		openID: {
 			type: Sequelize.STRING(255),
 			allowNull: false
 		},
-		AVATARURL: {
+		name: {
 			type: Sequelize.STRING(255),
 			allowNull: false
 		},
-		OPENID: {
+		stuID: {
 			type: Sequelize.STRING(255),
 			allowNull: false
 		},
-		GENDER: {
+		academy: {
 			type: Sequelize.STRING(255),
 			allowNull: false
 		},
-		AUTH: {
-			type: Sequelize.INTEGER(255),
+		stuClass: {
+			type: Sequelize.STRING(255),
 			allowNull: false
 		},
-		COLLECTION: {
+		date: {
 			type: Sequelize.STRING(255),
-			allowNull: true
+			allowNull: false
 		}
 	}, {
-		tableName: 'USER_INFO',
+		tableName: 'stu_auth',
 		timestamps: false
 	});

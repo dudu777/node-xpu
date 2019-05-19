@@ -5,6 +5,7 @@ const obj={
         message:message,
         data:data
     }
-}
+    },
+
 }
 module.exports = obj

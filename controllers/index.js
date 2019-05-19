@@ -1,28 +1,22 @@
-var User = require('../models').User
-var Until = require('./untils')  //同级目录下
+var login =require('./user').login
+var auth = require('./user').auth
+var getGoods = require('./good').getGoods
+var getGoodsByType = require('./good').getGoodsByType
+var publishGood = require('./good').publishGood
+var getContactById = require('./user').getContactById
+var addContactById = require('./user').addContactById
+var search = require('./good').search
+// var auth = require('./user').auth
 
 module.exports = {
-    login: function(req, res, next) {
-        console.log(req.body)
-        var nickname = req.body.nickname;  //统一接收前端的电话号，用户名，或者其他（多方式登录）
-        var avatarurl = req.body.avatarurl;
-        var openid = req.body.openid;
-        var gender = req.body.gender
-        var auth = req.body.auth
-        var user={
-            NICKNAME: nickname,
-            AVATARURL: avatarurl,
-            OPENID: openid,
-            GENDER: gender,
-            AUTH: auth
-        }    
-        User.create(user).then(r => {
-            res.json(Until.setResult(200,'success'))
-        }).catch(err=>{
-            console.log(err)
-            res.json(Until.setResult(500,'error',err))   
-        })
-        
-    }
+    login,
+    auth,
+    getGoods,
+    getGoodsByType,
+    publishGood,
+    getContactById,
+    addContactById,
+    search
+
    
 }
