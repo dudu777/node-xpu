@@ -8,12 +8,15 @@ var ctrls = require('../../controllers')
 
 router.post('/login', jsonParser,ctrls.login);
 router.post('/auth', jsonParser,ctrls.auth);
+router.get('/getGoodsByType',ctrls.getGoodsByType);
 router.get('/goods_list',ctrls.getGoods);
-router.get('/goods_list1',ctrls.getGoodsByType);
 router.post('/goods_publish',jsonParser,ctrls.publishGood)
 router.post('/getContactById',jsonParser,ctrls.getContactById)
 router.post('/addContactById',jsonParser,ctrls.addContactById)
+router.post('/getPublishById',jsonParser,ctrls.getPublishById)
+router.post('/cancelPublish',jsonParser,ctrls.cancelPublish)
 router.get('/search',jsonParser,ctrls.search)
+router.get('/getTaglist',jsonParser,ctrls.getTaglist)
 
 
 module.exports = router;

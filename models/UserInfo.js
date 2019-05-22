@@ -1,4 +1,4 @@
-var Sequelize = require('Sequelize')  //引入Sequelizee模块
+var Sequelize = require('sequelize')  //引入Sequelizee模块
 var db = require('../db/db.js')  //引入数据库
 /*
  * 定义表的映射模型

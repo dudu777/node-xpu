@@ -70,7 +70,15 @@ module.exports = db.define('goods',
 			allowNull: true,
 			defaultValue: '1'
 		},
+		contact: {
+			type: Sequelize.STRING(255),
+			allowNull: false
+		},
 		address: {
+			type: Sequelize.STRING(255),
+			allowNull: true
+		},
+		coverImg: {
 			type: Sequelize.STRING(255),
 			allowNull: true
 		},
