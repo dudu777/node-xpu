@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING(255),
 			allowNull: true
 		},
-		openId: {
+		openID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
@@ -48,17 +48,13 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING(255),
 			allowNull: true
 		},
-		isBargin: {
+		isBargain: {
 			type: DataTypes.INTEGER(1),
 			allowNull: false
 		},
 		publishTime: {
 			type: DataTypes.STRING(255),
 			allowNull: false
-		},
-		isFree: {
-			type: DataTypes.INTEGER(1),
-			allowNull: true
 		},
 		isWatch: {
 			type: DataTypes.INTEGER(1),
@@ -68,6 +64,22 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.INTEGER(11),
 			allowNull: true,
 			defaultValue: '1'
+		},
+		address: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		coverImg: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
+		contact: {
+			type: DataTypes.STRING(255),
+			allowNull: false
+		},
+		favor: {
+			type: DataTypes.STRING(255),
+			allowNull: true
 		}
 	}, {
 		tableName: 'goods',

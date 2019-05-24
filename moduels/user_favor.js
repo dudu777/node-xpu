@@ -1,27 +1,27 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('user_contact', {
+	return sequelize.define('user_favor', {
 		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		openID: {
+		opeinID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		con_type: {
+		goodID: {
 			type: DataTypes.STRING(255),
 			allowNull: false
 		},
-		con_num: {
+		favorTime: {
 			type: DataTypes.STRING(255),
-			allowNull: true
+			allowNull: false
 		}
 	}, {
-		tableName: 'user_contact',
+		tableName: 'user_favor',
 		timestamps: false
 	});
 };
