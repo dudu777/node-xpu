@@ -5,6 +5,7 @@ var getGoodsByType = require('./good').getGoodsByType
 var publishGood = require('./good').publishGood
 var getPublishById =require('./good').getPublishById
 var getTradeById =require('./good').getTradeById
+var getFavorById =require('./good').getFavorById
 var favor = require('./good').favor
 var  getUserfavor = require('./good').getUserfavor
 
@@ -29,7 +30,8 @@ module.exports = {
     getTaglist,
     cancelPublish,
     favor,
-    getUserfavor
+    getUserfavor,
+    getFavorById
 
    
 }
