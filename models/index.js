@@ -1,15 +1,17 @@
-var UserInfo = require('./UserInfo')
-var UserAuth = require('./UserAuth')
-var UserContact = require('./UserContact')
-var Goods = require('./goods')
-var GoodType = require('./goods_type')
-var UserFavor = require('./UserFavor')
+var User = require('./User')
+var Good = require('./Good')
+var Category = require('./Category')
+var Gleaning = require('./Gleaning')
+var Alumni = require('./Alumni')
+var Contact = require('./Contact')
+var Feedback = require('./Feedback')
 
 module.exports = {
-    UserInfo,
-    UserAuth,
-    UserContact,
-    Goods,
-    GoodType,
-    UserFavor
+    User,
+    Good,
+    Category,
+    Gleaning,
+    Alumni,
+    Contact,
+    Feedback
 }

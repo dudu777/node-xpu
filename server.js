@@ -14,7 +14,6 @@ app.listen(port, () => {
 })
 
 
-
 var formidable = require("formidable");
 var path = require("path")
 var fs = require("fs")
@@ -28,11 +27,10 @@ app.post("/upload", (req, res) => {
 
     form.parse(req, (err, fields, files) => {
         let oldPath = files.file.path;//这里的路径是图片的本地路径
-        console.log(files)
-        console.log(files.file.name)//图片传过来的名字
+      
         let newPath = path.join(path.dirname(oldPath), files.file.name);
         //这里我传回一个下载此图片的Url
-        var downUrl = 'http://localhost:5000/' + files.file.name;//这里是想传回图片的链接
+        var downUrl =  files.file.name;//这里是想传回图片的链接  'http://localhost:5000/' +
     
         fs.rename(oldPath, newPath, () => {//fs.rename重命名图片名称
 
@@ -43,10 +41,22 @@ app.post("/upload", (req, res) => {
 })
 
 
+
+
+
+// app.use('/v1/api', express.static('public'));
+// app.use('/', function(req, res){
+//     res.write('You maybe access /v1/api');
+//     res.end();
+// });
+
+
+
+
 // const SequelizeAuto = require('sequelize-auto')
 // // database数据库名称   name 用户  password密码
-// const auto = new SequelizeAuto('xpu','root','dupingping', { 
-//     host: "47.106.139.243",   //数据库地址
+// const auto = new SequelizeAuto('xpu','root','dupingping1215', { 
+//     host: "47.96.230.197",   //数据库地址
 //     dialect: 'mysql',  
 //     directory: './moduels',  //生成的模块放到的目录
 //     port: '3306',  //数据库端口
