@@ -1,5 +1,6 @@
 var Sequelize = require('sequelize')  //引入Sequelizee模块
 var db = require('../db/db.js')  //引入数据库
+var monment = require('moment')
 /*
  * 定义表的映射模型 Sequelize
  * https://Sequelizee.readthedocs.io/en/v3/docs/models-definition/ 
@@ -43,19 +44,24 @@ module.exports = db.define('good',
 			primaryKey: true
 		},
 		is_new: {
-			type: Sequelize.CHAR(1),
+			type: Sequelize.BOOLEAN,
 			allowNull: false,
-			defaultValue: '0'
+			defaultValue: false
 		},
 		is_bargain: {
-			type: Sequelize.CHAR(1),
+			type: Sequelize.BOOLEAN,
 			allowNull: false,
-			defaultValue: '0'
+			defaultValue: false
 		},
 		is_free: {
-			type: Sequelize.CHAR(1),
+			type: Sequelize.BOOLEAN,
 			allowNull: false,
-			defaultValue: '0'
+			defaultValue: false
+		},
+		is_public: {
+			type: Sequelize.BOOLEAN,
+			allowNull: false,
+			defaultValue: false
 		},
 		tag: {
 			type: Sequelize.STRING(100),
@@ -76,9 +82,8 @@ module.exports = db.define('good',
 			defaultValue: '1'
 		},
 		create_time: {
-			type: Sequelize.DATE,
+			type: Sequelize.STRING(50),
 			allowNull: true,
-			defaultValue: Sequelize.NOW
 		},
 		update_time: {
 			type: Sequelize.DATE,

@@ -26,30 +26,35 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		sell_price: {
-			type: DataTypes.DECIMAL,
+			type: DataTypes.STRING(10),
 			allowNull: false
 		},
 		bid_price: {
-			type: DataTypes.DECIMAL,
+			type: DataTypes.STRING(10),
 			allowNull: true
 		},
-		cate_id: {
-			type: DataTypes.INTEGER(11),
+		category: {
+			type: DataTypes.STRING(10),
 			allowNull: false,
 			primaryKey: true
 		},
 		is_new: {
-			type: DataTypes.CHAR(1),
+			type: DataTypes.INTEGER(1),
 			allowNull: false,
 			defaultValue: '0'
 		},
 		is_bargain: {
-			type: DataTypes.CHAR(1),
+			type: DataTypes.INTEGER(1),
 			allowNull: false,
 			defaultValue: '0'
 		},
+		is_public: {
+			type: DataTypes.INTEGER(1),
+			allowNull: true,
+			defaultValue: '0'
+		},
 		is_free: {
-			type: DataTypes.CHAR(1),
+			type: DataTypes.INTEGER(1),
 			allowNull: false,
 			defaultValue: '0'
 		},
@@ -61,8 +66,8 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING(50),
 			allowNull: true
 		},
-		contact_id: {
-			type: DataTypes.INTEGER(11),
+		contact: {
+			type: DataTypes.STRING(50),
 			allowNull: false,
 			primaryKey: true
 		},

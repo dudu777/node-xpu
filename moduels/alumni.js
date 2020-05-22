@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
 	return sequelize.define('alumni', {
-		userid: {
+		user_id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true
@@ -41,4 +41,3 @@ module.exports = function(sequelize, DataTypes) {
 		timestamps: false
 	});
 };
- 

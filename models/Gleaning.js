@@ -13,7 +13,9 @@ module.exports = db.define('gleaning',
 		},
 		gln_id: {
 			type: Sequelize.INTEGER(11),
-			allowNull: false
+			allowNull: false,
+			primaryKey: true,
+			autoIncrement: true
 		},
 		gln_name: {
 			type: Sequelize.STRING(200),
@@ -28,16 +30,27 @@ module.exports = db.define('gleaning',
 			allowNull: true
 		},
 		gln_time: {
-			type: Sequelize.DATE,
+			type: Sequelize.STRING(50),
 			allowNull: true
 		},
 		address: {
 			type: Sequelize.STRING(100),
 			allowNull: true
 		},
+		is_public: {
+			type: Sequelize.CHAR(1),
+			allowNull: false,
+			defaultValue: '0'
+		},
+		contact: {
+			type: Sequelize.STRING(50),
+			allowNull: false,
+			primaryKey: true
+		},
 		create_time: {
-			type: Sequelize.DATE,
-			allowNull: true
+			type: Sequelize.STRING(50),
+			allowNull: true,
+			defaultValue: Sequelize.NOW
 		},
 		failure_time: {
 			type: Sequelize.DATE,

@@ -6,14 +6,14 @@ var db = require('../db/db.js')  //引入数据库
  * */
 module.exports = db.define('alumni',
     {
-		userid: {
+		user_id: {
 			type: Sequelize.INTEGER(11),
 			allowNull: false,
 			primaryKey: true
 		},
 		alumni_id: {
 			type: Sequelize.INTEGER(11),
-			allowNull: false
+			allowNull: true
 		},
 		faculty: {
 			type: Sequelize.STRING(20),
@@ -37,7 +37,7 @@ module.exports = db.define('alumni',
 			allowNull: true
 		},
 		create_time: {
-			type: Sequelize.DATE,
+			type: Sequelize.STRING(20),
 			allowNull: true
 		}
 	}, {

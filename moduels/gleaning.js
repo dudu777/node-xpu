@@ -9,7 +9,9 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		gln_id: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false
+			allowNull: false,
+			primaryKey: true,
+			autoIncrement: true
 		},
 		gln_name: {
 			type: DataTypes.STRING(200),
@@ -24,12 +26,22 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		gln_time: {
-			type: DataTypes.DATE,
+			type: DataTypes.STRING(50),
 			allowNull: true
 		},
 		address: {
 			type: DataTypes.STRING(100),
 			allowNull: true
+		},
+		is_public: {
+			type: DataTypes.CHAR(1),
+			allowNull: true,
+			defaultValue: '0'
+		},
+		contact: {
+			type: DataTypes.STRING(50),
+			allowNull: false,
+			primaryKey: true
 		},
 		create_time: {
 			type: DataTypes.DATE,
