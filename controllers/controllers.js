@@ -9,6 +9,11 @@ var getCount  = require('./api').getCount
 var updateUser = require('./api'). updateUser
 var addAlumni = require('./api'). addAlumni
 var getAlumni  = require('./api').getAlumni
+var getGoodByUserid   = require('./api').getGoodByUserid
+var getGlnByUserid   = require('./api').getGlnByUserid
+
+updateGoodStatu  = require('./api').updateGoodStatu
+updateGlnStatu  = require('./api').updateGlnStatu
 
 module.exports = {
     login,
@@ -22,7 +27,10 @@ module.exports = {
     getGoodByCate,
     getCategory,
     getGood,
-
+    getGoodByUserid,
+    getGlnByUserid,
+    updateGoodStatu,
+    updateGlnStatu
 
    
 }

@@ -17,7 +17,10 @@ router.get('/count/:user_id', ctrls.getCount);
 router.put('/user/:user_id', jsonParser,ctrls.updateUser);
 router.get('/category', ctrls.getCategory);
 router.get('/good', ctrls.getGood);
+router.get('/goodlist/:user_id', jsonParser,ctrls.getGoodByUserid);
 
+router.get('/glnlist/:user_id', jsonParser,ctrls.getGlnByUserid);
 
-
+router.put('/goodstatu/:good_id', jsonParser,ctrls.updateGoodStatu);
+router.put('/glnstatu/:gln_id', jsonParser,ctrls.updateGlnStatu);
 module.exports = router;

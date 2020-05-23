@@ -135,38 +135,41 @@ res.json(Untils.setResult(200, 'success',r))
         })
     },
 
+    // 查询用户发布的闲置
+    getGoodByUserid: function (req, res, next) {
+        Good.findAll({ where: { user_id: req.params.user_id } }).then(r => {
+            res.json(Untils.setResult(200, 'success', r))
+        }).catch(err => {
+            res.json(Untils.setResult(500, 'error', err))
+        })
+    },
+    // 查询用户发布的报失 拾遗
+    getGlnByUserid: function (req, res, next) {
+        Gleaning.findAll({ where: { user_id: req.params.user_id } }).then(r => {
+            res.json(Untils.setResult(200, 'success', r))
+        }).catch(err => {
+            res.json(Untils.setResult(500, 'error', err))
+        })
+    },
+    // 更新物品状态
+    updateGoodStatu(req, res, next){
+        Good.update({status: req.body.status},{ where: { good_id: req.params.good_id } }).then(r => {
+            res.json(Untils.setResult(200, 'success', r))
+        }).catch(err => {
+            res.json(Untils.setResult(500, 'error', err))
+        })
 
-    timestampFormat: function ( timestamp ) {
-        function zeroize( num ) {
-            return (String(num).length == 1 ? '0' : '') + num;
-        }
-    
-        var curTimestamp = parseInt(new Date().getTime() / 1000); //当前时间戳
-        var timestampDiff = curTimestamp - timestamp; // 参数时间戳与当前时间戳相差秒数
-    
-        var curDate = new Date( curTimestamp * 1000 ); // 当前时间日期对象
-        var tmDate = new Date( timestamp * 1000 );  // 参数时间戳转换成的日期对象
-    
-        var Y = tmDate.getFullYear(), m = tmDate.getMonth() + 1, d = tmDate.getDate();
-        var H = tmDate.getHours(), i = tmDate.getMinutes(), s = tmDate.getSeconds();
-    
-        if ( timestampDiff < 60 ) { // 一分钟以内
-            return "刚刚";
-        } else if( timestampDiff < 3600 ) { // 一小时前之内
-            return Math.floor( timestampDiff / 60 ) + "分钟前";
-        } else if ( curDate.getFullYear() == Y && curDate.getMonth()+1 == m && curDate.getDate() == d ) {
-            return '今天' + zeroize(H) + ':' + zeroize(i);
-        } else {
-            var newDate = new Date( (curTimestamp - 86400) * 1000 ); // 参数中的时间戳加一天转换成的日期对象
-            if ( newDate.getFullYear() == Y && newDate.getMonth()+1 == m && newDate.getDate() == d ) {
-                return '昨天' + zeroize(H) + ':' + zeroize(i);
-            } else if ( curDate.getFullYear() == Y ) {
-                return  zeroize(m) + '月' + zeroize(d) + '日 ' + zeroize(H) + ':' + zeroize(i);
-            } else {
-                return  Y + '年' + zeroize(m) + '月' + zeroize(d) + '日 ' + zeroize(H) + ':' + zeroize(i);
-            }
-        }
+    },
+     // 更新失物状态
+     updateGlnStatu(req, res, next){
+        Gleaning.update({status: req.body.status},{ where: { gln_id: req.params.gln_id } }).then(r => {
+            res.json(Untils.setResult(200, 'success', r))
+        }).catch(err => {
+            res.json(Untils.setResult(500, 'error', err))
+        })
+
     }
+
     //     auth: function(req,res,next) {
     //         console.log(req.body)
     //         var obj = req.body 
