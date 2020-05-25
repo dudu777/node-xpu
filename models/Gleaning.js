@@ -50,7 +50,6 @@ module.exports = db.define('gleaning',
 		create_time: {
 			type: Sequelize.STRING(50),
 			allowNull: true,
-			defaultValue: Sequelize.NOW
 		},
 		failure_time: {
 			type: Sequelize.DATE,

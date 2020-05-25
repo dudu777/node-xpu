@@ -3,6 +3,7 @@ var Good = require('../models').Good
 var Gleaning = require('../models').Gleaning
 var Category = require('../models').Category
 var Alumni = require('../models').Alumni
+var Feedback = require('../models').Feedback
 // var UserContact = require('../models').UserContact
 var Untils = require('./untils')  //同级目录下
 var request = require('request');
@@ -168,6 +169,14 @@ res.json(Untils.setResult(200, 'success',r))
             res.json(Untils.setResult(500, 'error', err))
         })
 
+    },
+    // 意见反馈发布接口
+    addFeedback: function (req, res, next) {
+        Feedback.create(req.body).then(r => {
+            res.json(Untils.setResult(200, 'success'))
+        }).catch(err => {
+            res.json(Untils.setResult(500, 'error', err))
+        })
     }
 
     //     auth: function(req,res,next) {

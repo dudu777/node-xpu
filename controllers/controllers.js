@@ -11,6 +11,7 @@ var addAlumni = require('./api'). addAlumni
 var getAlumni  = require('./api').getAlumni
 var getGoodByUserid   = require('./api').getGoodByUserid
 var getGlnByUserid   = require('./api').getGlnByUserid
+var addFeedback = require('./api').addFeedback
 
 updateGoodStatu  = require('./api').updateGoodStatu
 updateGlnStatu  = require('./api').updateGlnStatu
@@ -30,7 +31,8 @@ module.exports = {
     getGoodByUserid,
     getGlnByUserid,
     updateGoodStatu,
-    updateGlnStatu
+    updateGlnStatu,
+    addFeedback
 
    
 }

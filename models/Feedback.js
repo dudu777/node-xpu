@@ -13,15 +13,17 @@ module.exports = db.define('feedback',
 		},
 		fdb_id: {
 			type: Sequelize.INTEGER(11),
-			allowNull: false
+			allowNull: false,
+			primaryKey: true,
+			autoIncrement: true
 		},
 		article: {
 			type: Sequelize.STRING(255),
 			allowNull: false
 		},
 		create_time: {
-			type: Sequelize.DATE,
-			allowNull: true
+			type: Sequelize.STRING(50),
+			allowNull: true,
 		}
 	}, {
 		tableName: 'feedback',

@@ -8,6 +8,7 @@ var ctrls = require('../../controllers/controllers')
 
 router.post('/login', jsonParser,ctrls.login);
 router.post('/good', jsonParser,ctrls.addGood);
+router.post('/feedback', jsonParser,ctrls.addFeedback);
 router.post('/gleaning', jsonParser,ctrls.addGleaning);
 router.post('/alumni', jsonParser,ctrls.addAlumni);
 router.get('/alumni/:user_id', ctrls.getAlumni);
